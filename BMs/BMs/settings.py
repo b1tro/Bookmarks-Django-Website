@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'BMs.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-POSTGRES_DBNAME =os.getenv('POSTGRES_DBNAME')
+POSTGRES_DBNAME = os.getenv('POSTGRES_DBNAME')
 POSTGRES_USER = os.getenv('POSTGRES_USER')
 POSTGRES_PASSWORD = os.getenv('POSTGRES_PASSWORD')
 POSTGRES_HOST = os.getenv('POSTGRES_HOST')

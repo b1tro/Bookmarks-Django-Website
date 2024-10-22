@@ -1,13 +1,13 @@
 services:
-  postgres:
+  postgres-db:
     container_name: postgres
     image: postgres:latest
+    environment:
+      POSTGRES_USER: "bookmarks"
+      POSTGRES_PASSWORD: "bookmarks_admin"
+      POSTGRES_DB: "bookmarks_pg"
     ports:
       - "5432:5432"
-    environment:
-      POSTGRES_USER: bookmarks
-      POSTGRES_PASSWORD: bookmarks_admin
-      POSTGRES_DB: bookmarks
 
   django:
     container_name: django_app
@@ -23,7 +23,7 @@ services:
       - media-files:/app/media
       - ./BMs/BMs/settings.py:/app/BMs/settings.py
     depends_on:
-      - postgres
+      - postgres-db
       - redis
 
   web-server:
