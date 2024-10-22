@@ -1,0 +1,305 @@
+@font-face {
+    font-family: "VK";
+    src: url("https://db.onlinewebfonts.com/t/5795a47e252d16c82bb79fa354b224db.eot");
+    src: url("https://db.onlinewebfonts.com/t/5795a47e252d16c82bb79fa354b224db.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/5795a47e252d16c82bb79fa354b224db.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/5795a47e252d16c82bb79fa354b224db.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/5795a47e252d16c82bb79fa354b224db.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/5795a47e252d16c82bb79fa354b224db.svg#VK Sans Display Regular")format("svg");
+}
+
+body {
+    margin: 0;
+    font-family: VK;
+    color: #e9ecf1;
+}
+
+.page_name {
+    color: #e9ecf1;
+}
+.top-line {
+    display: block;
+    background-color: #597ba0;
+    border: solid #486a8d 1px;
+}
+
+.underground-line {
+    background-color: #486a8d;
+    min-height: 5px;
+}
+.top-line div {
+    margin: 0px;
+}
+.top-line h3 {
+    display: inline-block;
+    margin: 15px;
+    margin-right: 10%;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+a {
+    color: white;
+}
+
+.content {
+    background-color: #597ba0;
+    margin: 30px;
+    padding:5px;
+    border: solid #486a8d;
+}
+
+.errorlist_header {
+    color: 	#e9ecf1;
+    font-weight: bold;
+}
+
+.headers{
+    display: inline;
+}
+.headers li {
+    color: #e9ecf1;
+    display: inline;
+    margin: 1%;
+}
+.headers a {
+    color: #b8b8bb;
+}
+
+.header .hello_header {
+    float: right;
+    padding-right: 1%;
+}
+
+.header .save_image_header {
+    padding-right: 1%;
+}
+li {
+    color: white;
+}
+
+.header a {
+    text-decoration: none;
+}
+ .header .hello_header a {
+     text-decoration: underline;
+     color: #ffffff;
+ }
+
+.selected_category a {
+    color: #ffffff;
+}
+
+.profile_information {
+    border: solid #486a8d;
+    padding-left: 5px;
+    padding-right: 5px;
+    display: inline-block;
+}
+
+.profile_information p {
+    margin: 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.profile_username {
+    font-weight: bold;
+    margin: 5px;
+    text-align: center;
+    display: block;
+}
+.save_image_form {
+    display: flex;
+}
+
+.image_preview_container {
+    width: 300px;
+    height: 300px;
+    margin-left: 30px;
+}
+
+.image_owner {
+    font-size: 15 px;
+    margin: 0px;
+    margin-bottom: 3px
+}
+
+.bookmark_image{
+    border: solid #486a8d;
+}
+
+.bookmark_like {
+    display:flex;
+}
+
+.bookmark_like p {
+    margin-left: 15px;
+}
+.like_button {
+    margin-top: 5px;
+    appearance: button;
+    backface-visibility: hidden;
+    background-color: #486a8d;
+    border-radius: 6px;
+    border-width: 0;
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-family: -apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif;
+    font-size: 100%;
+    height: 44px;
+    line-height: 1.15;
+    outline: none;
+    overflow: hidden;
+    padding: 0 25px;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    transform: translateZ(0);
+    transition: all .2s,box-shadow .08s ease-in;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.like_button:disabled {
+  cursor: default;
+}
+
+.like_button:focus {
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+}
+
+.bookmark_container {
+    display:flex;
+}
+
+.image_wrapper {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.bookmark_desc {
+    margin: 0 15px 0 10px;
+}
+
+.image_owner {
+    float:right;
+}
+
+.bookmark_feed {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bookmark_feed_container {
+    margin: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border: solid #486a8d;
+    padding: 5px;
+}
+
+.bookmark_feed_title {
+    padding-bottom: 5px !important;
+}
+
+.user_information {
+    margin: 10px;
+    border: solid #486a8d;
+}
+
+.user_information h4 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.people_grid {
+    display: flex;
+}
+
+.subscribe_button_flexbox {
+    justify-content: center;
+    display: flex;
+    margin: 15px;
+    flex-direction: column;
+}
+
+.subscribe_button {
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    background-color: #e7e7e7;
+    color: black;
+}
+
+.followers_count {
+    text-align: center;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.tabs {
+    display: flex;
+}
+
+.tab {
+    margin: -1px;
+    display: block;
+    border: solid #486a8d;
+    padding: 10px;
+    background-color: #486a8d;
+}
+
+.tab:hover {
+    background-color: #597ba0;
+}
+.tab.selected {
+    background-color: #597ba0;
+}
+.unactive {
+    display: none;
+}
+
+.actions {
+    list-style-type: none;
+}
+
+.total_views {
+    margin: auto 0 0 auto;
+}
+
+.total_views img {
+    max-height: 16px;
+}
+
+.ranked_images_list {
+    list-style-type: none;
+}
+@media screen and (max-width: 1200px)
+{
+
+}
+
+@media screen and (max-width: 998px)
+{
+
+}
+
+@media screen and (max-width: 768px)
+{
+
+}
+
+@media screen and (max-width: 576px)
+{
+
+}
+

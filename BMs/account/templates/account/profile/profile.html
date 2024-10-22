@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load thumbnail %}
+<title>{% block title %}{{ user_profile.user.first_name }} {{ user_profile.user.last_name }}{% endblock %}</title>
+
+{% block content %}
+<div class="profile_information">
+    <span class="profile_username">{{ user_profile.user.username }}</span>
+    {% thumbnail user_profile.photo "300" as im %}
+        <a href="{{ user_profile.photo.url }}">
+            <img src="{{ im.url }}" alt="">
+        </a>
+    {% endthumbnail %}
+
+    <p>Имя: {{ user_profile.user.first_name }} {{ user_profile.user.last_name }}</p>
+    <p>Email: {{ user_profile.user.email }}</p>
+    <p>Дата рождения: {{ user_profile.date_of_birth }}</p>
+
+    <div class="subscribe_button_flexbox" >
+        <span class="followers_count">Подписчиков:
+            <span class="followers_count_text">
+                {{ user_profile.user.followers.all.count }}
+            </span>
+        </span>
+        {% if user_profile != request.user.profile %}
+            <button class="subscribe_button"
+                    data-action="{% if request.user in user_profile.user.followers.all %}un{% endif %}follow">
+                {% if request.user in user_profile.user.followers.all %}
+                    Отписаться
+                {% else %}
+                    Подписаться
+                {% endif %}
+            </button>
+            {% block domready %}
+                <script src="{% static 'js/follow.js' %}"></script>
+            {% endblock %}
+
+        {% endif %}
+    </div>
+</div>
+    {% if user_profile == request.user.profile %}
+            <div class="change_profile">
+                <p style="margin: 7px">
+                    <a href="{% url 'profile_edit' %}"><button>Редактировать</button></a>
+                </p>
+                <p style="margin: 7px">
+                    <a href="{% url 'password_change' %}"><button>Сменить пароль</button></a>
+                </p>
+            </div>
+    {% endif %}
+
+
+{% endblock %}

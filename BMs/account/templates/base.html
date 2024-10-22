@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <script src="{% static 'js/get_cookies.js' %}"></script>
+</head>
+<body>
+<div class="header">
+    <div class="top-line">
+        <h3>Сохранёнки</h3>
+        <ul class="headers">
+        {% if request.user.is_authenticated  %}
+            <li {% if page_type == "Профиль"%} class="selected_category" {% endif %}>
+                <a href="{% url 'profile' username=request.user.username %}" >Профиль</a>
+            </li>
+            <li {% if page_type == "Сохранёнки" %} class="selected_category" {% endif %} >
+                <a href="{% url 'feed' %}">Сохранёнки</a>
+            </li>
+            <li {% if page_type == "Сообщество" %} class="selected_category" {% endif %}>
+                <a href="{% url 'people' %}">Сообщество</a>
+            </li>
+            <li class="save_image_header">
+                <a href="{% url 'save_image' %}">Сохранить картинку</a>
+            </li>
+        {% endif %}
+            <li class="hello_header">
+                {% if request.user.is_authenticated %}
+                Привет,
+                {% if request.user.first_name %}
+                    {{ request.user.first_name }}!
+                {% else %}
+                     {{ request.user.username }}!
+                {% endif %}
+                    <a href="{% url 'logout' %}">Выйти</a>
+                {% else %}
+                    <a href="{% url 'login' %}">Войти</a>
+                {% endif %}
+            </li>
+        </ul>
+    </div>
+    <div class="underground-line"></div>
+</div>
+<div class="content">
+<div class="page_name">
+        <h3>{{ page_name }}</h3>
+</div>
+    {% block content %}
+    {% endblock %}
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{% if errors %}
+    <div>
+    <ul class="error_list">
+    </ul>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        var error_list = document.querySelector(".error_list")
+        {% for error in errors %}
+            var error = document.createElement("li")
+            error.innerText = "{{ error }}"
+            error_list.appendChild(error)
+        {% endfor %}
+
+
+        var header = document.querySelector('.errorlist_header');
+        if(header === null){
+            header = document.createElement("p");
+            header.classList.add("errorlist_header");
+            header.innerText = "Ошибка регистрации"
+            document.querySelector('.registration_form').prepend(error_list);
+            document.querySelector('.registration_form').prepend(header);
+        }
+    })
+    </script>
+    </div>
+{% endif %}
